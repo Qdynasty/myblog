@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    button{
+        cursor: pointer;
+    }
+    
+    </style>
+    <script>
+    window.onload = function(){
+        var oBtn1 = document.getElementById('btn1')
+        var oBtn2 = document.getElementById('btn2')
+        var oBtn3 = document.getElementById('btn3')
+        
+        // 解决内存
+        var oTimer = null
+
+        oBtn1.onclick = function()
+        {
+          setTimeout(
+              function(){
+              alert("单次")
+          },1000)
+        }
+
+        oBtn2.onclick = function(){
+            setInterval(fnAlert,5500)
+            function fnAlert(){
+                alert('要不要嫁给我')
+            }
+        }
+        oBtn3.onclick = function(){
+            clearInterval(oTimer)
+            oTimer
+        }
+
+
+
+    }
+    
+    
+    </script>
+</head>
+<body>
+        <button id="btn1">要不要嫁给我</button>
+        <button id="btn2">不要</button>
+        <button id="btn3">嫁</button>
+   
+    
+</body>
+</html>
